@@ -15,7 +15,7 @@ const MONGO_OPTIONS = {
 const MONGO_USERNAME = process.env.MONGO_USERNAME || '';
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '';
 const MONGO_DB = process.env.MONGO_DB || '';
-const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.phmi1yn.mongodb.net/${MONGO_DB}?retryWrites=true&w=majority`;
+const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.h8r59dq.mongodb.net/${MONGO_DB}?retryWrites=true&w=majority`;
 const SERVER_PORT = process.env.SERVER_PORT
 	? Number(process.env.SERVER_PORT)
 	: 5000;
