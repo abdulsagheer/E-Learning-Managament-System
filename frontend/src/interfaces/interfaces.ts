@@ -12,3 +12,9 @@ export interface InitialState {
 	loading: boolean;
 	error: string | null;
 }
+
+export interface UserDetails {
+	name: string;
+	email: string;
+	password: string;
+}
