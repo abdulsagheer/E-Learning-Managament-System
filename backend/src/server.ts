@@ -83,8 +83,6 @@ const StartServer = () => {
 
 	/**  Routes */
 	app.use('/api/users', userRoute);
-	app.use('/api/stocks', stockRoute);
-	app.use('/api/orders', orderRoute);
 
 	/** Error handling */
 	app.use((req, res, next) => {
