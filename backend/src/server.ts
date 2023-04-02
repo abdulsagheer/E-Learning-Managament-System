@@ -10,9 +10,6 @@ import Logging from './utils/logging';
 import { config } from './config/config';
 import Api, { Message } from './utils/helper';
 import userRoute from './routes/user.route';
-import stockRoute from './routes/stock.route';
-import orderRoute from './routes/order.route';
-import { initialiseCron } from './services/cron-jobs/cron';
 
 dotenv.config();
 /** DB configuration */
@@ -21,10 +18,10 @@ dbConnect();
 /** Using Express Server */
 const app: Application = express();
 
-/** Cron Job */
-// initialiseCron();
-
-var whitelist = ['http://https:localhost:3000', 'http://https:localhost:5173'];
+var whitelist = [
+	process.env.NEXT_PUBLIC_CLIENT_URL_1,
+	process.env.NEXT_PUBLIC_CLIENT_URL_2,
+];
 var corsOptionsDelegate = function (req: any, callback: any) {
 	var corsOptions;
 	if (whitelist.indexOf(req.header('Origin')) !== -1) {
