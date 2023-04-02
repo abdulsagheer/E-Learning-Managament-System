@@ -1,15 +1,15 @@
 // Importing Libraries
-import { Document, ObjectId } from 'mongoose';
+import { Document } from 'mongoose';
 
 export interface IUser extends Document {
-	save(): any;
-	createdAt: Date;
-	updatedAt: Date;
 	name: string;
 	email: string;
 	password: string;
-	walletBalance: number;
-	isAdmin: boolean;
-	portfolio: ObjectId[];
-	orders: ObjectId[];
+	picture?: string;
+	role?: string[];
+	stripe_account_id?: string;
+	stripe_seller?: {};
+	stripeSession?: {};
+	createdAt?: Date;
+	updatedAt?: Date;
 }

@@ -6,16 +6,22 @@ import { IUser } from '../interfaces/User';
 
 const userSchema = new Schema(
 	{
-		name: { type: String, required: true },
-		email: { type: String, required: true, unique: true },
-		password: { type: String, required: true },
-		walletBalance: { type: Number, default: 50000000 },
-		isAdmin: { type: Boolean, default: false, required: true },
-		portfolio: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Stock' }],
-		orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }],
+		name: { type: String, trim: true, required: true },
+		email: { type: String, trim: true, required: true, unique: true },
+		password: { type: String, required: true, min: 6, max: 100 },
+		picture: { type: String, default: '/avatar.png' },
+		role: {
+			type: [String],
+			default: ['Subscriber'],
+			enum: ['Subscriber', 'Instructor', 'Admin'],
+		},
+		stripe_account_id: '',
+		stripe_seller: {},
+		stripeSession: {},
 	},
 	{
 		timestamps: true,
 	}
 );
+
 export default mongoose.model<IUser>('User', userSchema);
