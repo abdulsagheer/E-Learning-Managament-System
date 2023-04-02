@@ -12,20 +12,20 @@ const { Item } = Menu;
 
 const Navbar: React.FC<NavbarProps> = () => {
 	return (
-		<Menu mode="horizontal">
-			<Item icon={<AppstoreOutlined />}>
+		<Menu mode="horizontal" style={{ justifyContent: "center" }}>
+			<Item key="app" icon={<AppstoreOutlined />}>
 				<Link href="/">
 					<span>App</span>
 				</Link>
 			</Item>
 
-			<Item icon={<LoginOutlined />}>
+			<Item key="login" icon={<LoginOutlined />}>
 				<Link href="/login">
 					<span>Login</span>
 				</Link>
 			</Item>
 
-			<Item icon={<UserAddOutlined />}>
+			<Item key="register" icon={<UserAddOutlined />}>
 				<Link href="/register">
 					<span>Register</span>
 				</Link>
