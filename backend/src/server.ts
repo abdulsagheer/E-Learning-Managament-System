@@ -18,10 +18,8 @@ dbConnect();
 /** Using Express Server */
 const app: Application = express();
 
-var whitelist = [
-	process.env.NEXT_PUBLIC_CLIENT_URL_1,
-	process.env.NEXT_PUBLIC_CLIENT_URL_2,
-];
+var whitelist = [process.env.NEXT_PUBLIC_CLIENT_URL];
+
 var corsOptionsDelegate = function (req: any, callback: any) {
 	var corsOptions;
 	if (whitelist.indexOf(req.header('Origin')) !== -1) {
