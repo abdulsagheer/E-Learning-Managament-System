@@ -19,7 +19,7 @@ export const login = createAsyncThunk<User, User, { rejectValue: string }>(
 				"Access-Control-Allow-Origin": process.env
 					.NEXT_PUBLIC_CLIENT_URL as string,
 			});
-			window.localStorage.setItem("user", JSON.stringify(data));
+			window.localStorage.setItem("user", data);
 			return data;
 		} catch (error) {
 			const err = error as AxiosError;

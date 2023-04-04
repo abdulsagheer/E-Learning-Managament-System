@@ -11,25 +11,43 @@ import { NavbarProps } from "@/interfaces/interfaces";
 const { Item } = Menu;
 
 const Navbar: React.FC<NavbarProps> = () => {
-	return (
-		<Menu mode="horizontal" style={{ justifyContent: "center" }}>
-			<Item key="app" icon={<AppstoreOutlined />}>
+	const items = [
+		{
+			key: "app",
+			icon: <AppstoreOutlined />,
+			element: (
 				<Link href="/">
 					<span>App</span>
 				</Link>
-			</Item>
-
-			<Item key="login" icon={<LoginOutlined />}>
+			),
+		},
+		{
+			key: "login",
+			icon: <LoginOutlined />,
+			element: (
 				<Link href="/login">
 					<span>Login</span>
 				</Link>
-			</Item>
-
-			<Item key="register" icon={<UserAddOutlined />}>
+			),
+		},
+		{
+			key: "register",
+			icon: <UserAddOutlined />,
+			element: (
 				<Link href="/register">
 					<span>Register</span>
 				</Link>
-			</Item>
+			),
+		},
+	];
+
+	return (
+		<Menu mode="horizontal" style={{ justifyContent: "center" }}>
+			{items.map(({ key, icon, element }) => (
+				<Item key={key} icon={icon}>
+					{element}
+				</Item>
+			))}
 		</Menu>
 	);
 };
