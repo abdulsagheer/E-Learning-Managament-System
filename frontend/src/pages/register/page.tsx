@@ -1,3 +1,5 @@
+"use client";
+
 import { UserDetails } from "@/interfaces/interfaces";
 import React, { useState } from "react";
 
